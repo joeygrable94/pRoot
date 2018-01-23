@@ -1,3 +1,3 @@
 
 # pRoot: project root
-A basic HTML5 scructure to build from.
+A HTML5 structure to build off.
