@@ -4,7 +4,9 @@
 
 	<!-- meta -->
 	<title>title</title>
-	<meta charset="utf-8" author="Joey Grable">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="Joey Grable">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="copyright" content="copyright Joey Grable">
@@ -29,7 +31,17 @@
 
 	<!-- header -->
 	<header>
-		<div id="logo">HTML</div>
+		<div id="logo" class="logo-class">
+			<p>asdfasdf</p>
+			<nav>
+				<a href=""></a>
+				<a href=""></a>
+			</nav>
+			<ul>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
 		<nav>  
 			<a href="#home">Home</a>
 			<a href="#page">Page</a>
@@ -170,14 +182,14 @@
 		<iframe src="//joeygrable.com/about/" width="200" height="200"></iframe>
 
 		<!-- video -->
-		<video width="200" height="150" controls>
+		<video class="media" width="200" height="150" controls>
 			<source src="vid.mp4" type="video/mp4">
 			<source src="vid.ogg" type="video/ogg">
 			No video support.
 		</video>
 
 		<!-- audio -->
-		<audio controls>
+		<audio class="media" controls>
 			<source src="sound.ogg" type="audio/ogg">
 			<source src="sound.mp3" type="audio/mpeg">
 			No audio support.
