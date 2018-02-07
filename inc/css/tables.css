@@ -1,0 +1,27 @@
+/* TABLES */
+table {
+	width: 100%;*.
+	margin-bottom: calc( 4 * 8 / 1 * 18 + 0em);
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+thead {
+	font-weight: bolder;
+}
+tr {
+	border-bottom: 1px solid #b3b3b3;
+	padding-top: calc( 4 * 8 / 1 * 18 + 0em);
+	padding-bottom: calc( 4 * 8 / 1 * 18 + 0em);
+}
+tr:nth-child(even) {
+	background-color: #cccccc;
+}
+th, td {
+	text-align: left;
+}
+th:first-child, td:first-child {
+	padding-left: calc( (4/2) * 8 / 1 * 18 + 0em);
+}
+th:last-child, td:last-child {
+	padding-right: calc( (4/2) * 8 / 1 * 18 + 0em);
+}
