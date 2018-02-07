@@ -1,7 +1,7 @@
 /* TABLES */
 table {
 	width: 100%;*.
-	margin-bottom: calc( 4 * 8 / 1 * 18 + 0em);
+	margin-bottom: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 	border-collapse: collapse;
 	border-spacing: 0;
 }
@@ -10,8 +10,8 @@ thead {
 }
 tr {
 	border-bottom: 1px solid #b3b3b3;
-	padding-top: calc( 4 * 8 / 1 * 18 + 0em);
-	padding-bottom: calc( 4 * 8 / 1 * 18 + 0em);
+	padding-top: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
+	padding-bottom: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 }
 tr:nth-child(even) {
 	background-color: #cccccc;
@@ -20,8 +20,8 @@ th, td {
 	text-align: left;
 }
 th:first-child, td:first-child {
-	padding-left: calc( (4/2) * 8 / 1 * 18 + 0em);
+	padding-left: calc( calc(2 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 }
 th:last-child, td:last-child {
-	padding-right: calc( (4/2) * 8 / 1 * 18 + 0em);
+	padding-right: calc( calc(2 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 }

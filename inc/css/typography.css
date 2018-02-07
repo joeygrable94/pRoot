@@ -19,7 +19,7 @@ LINES
 
 calc( baselineMltp * BaselineUnit / baseFontEm * BaseFontSize );
 calc( baselineMltp * BaselineUnit / FontSizeMltp * BaseFontSize + 0emUnits);
-calc( 4 * 8 / 1 * 18 + 0em);
+calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 
 */
 :root {
@@ -29,7 +29,7 @@ calc( 4 * 8 / 1 * 18 + 0em);
 	--baseFontHeaders: sans-serif;
 	--baseFontMono: monospace;
 	
-	--baseFontSize: 20px;
+	--baseFontSize: 18;
 	--baselineUnit: 8px;
 	--baseFontEm: 1em;
 	--baselineMltp: 4;
@@ -62,7 +62,7 @@ calc( 4 * 8 / 1 * 18 + 0em);
 
 /* BASE */
 html {
-	font-size: calc( (18px / 16px) * 100% );
+	font-size: calc( var(--baseFontSize)/16 * 100%);
 	height: 100vh;
 	width: 100vw;
 	-webkit-text-size-adjust: 100%;
@@ -70,11 +70,13 @@ html {
 }
 
 body {
-	line-height: calc( 4 * 8 / 1em * 18 );
+	line-height: calc( calc(var(--baselineMltp) * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 	min-height: 100%;
 	min-width: 100%;
 	margin: 0;
 	padding: 0;
+	border: 0;
+	vertical-align: baseline;
 	font-family: var(--baseFontFamily);
 	font-weight: 400;
 	color: var(--black);
@@ -104,30 +106,30 @@ h6, .h6 {
 	font-weight: bold;
 }
 h1, .h1 {
-	margin-bottom: calc( 8 / var(--msUp2) * 18 + 0em);
+	margin-bottom: calc( calc(1 * var(--baselineUnit)) / calc(var(--msUp2) * var(--baseFontSize)) );
 	font-size: var(--msUp2);
-	line-height: calc( 8 * 8 / var(--msUp2) * 18 + 0em);
+	line-height: calc( calc(8 * var(--baselineUnit)) / calc(var(--msUp2) * var(--baseFontSize)) );
 }
 h2, .h2 {
-	margin-bottom: calc( 8 / var(--msUp1) * 18 + 0em);
+	margin-bottom: calc( calc(1 * var(--baselineUnit)) / calc(var(--msUp1) * var(--baseFontSize)) );
 	font-size: var(--msUp1);
-	line-height: calc( 6 * 8 / var(--msUp1) * 18 + 0em);
+	line-height: calc( calc(6 * var(--baselineUnit)) / calc(var(--msUp1) * var(--baseFontSize)) );
 }
 h3, .h3 {
-	margin-bottom: calc( 8 / var(--msUp1) * 18 + 0em);
+	margin-bottom: calc( calc(1 * var(--baselineUnit)) / calc(var(--msUp1) * var(--baseFontSize)) );
 	font-size: var(--msUp1);
-	line-height: calc( 6 * 8 / var(--msUp1) * 18 + 0em);
+	line-height: calc( calc(6 * var(--baselineUnit)) / calc(var(--msUp1) * var(--baseFontSize)) );
 }
 h4, .h4 {
-	margin-bottom: calc( 8 / var(--msUp1) * 18 + 0em);
+	margin-bottom: calc( calc(1 * var(--baselineUnit)) / calc(var(--msUp1) * var(--baseFontSize)) );
 	font-size: var(--msUp1);
-	line-height: calc( 6 * 8 / var(--msUp1) * 18 + 0em);
+	line-height: calc( calc(6 * var(--baselineUnit)) / calc(var(--msUp1) * var(--baseFontSize)) );
 }
 h5, .h5,
 h6, .h6 {
-	margin-bottom: calc( 8 / 1 * 18 + 0em);
-	font-size: 1;
-	line-height: calc( 4 * 8 / 1 * 18 + 0em);
+	margin-bottom: calc( calc(1 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
+	font-size: var(--baseFontEm);
+	line-height: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 }
 
 
@@ -137,32 +139,32 @@ h6, .h6 {
 /* RESPONSIVE */
 @media (min-width: 43.75em) {
 	h1, .h1 {
-		margin-bottom: calc( 8 / var(--msUp3) * 18 + 0em);
+		margin-bottom: calc( calc(1 * var(--baselineUnit)) / calc(var(--msUp3) * var(--baseFontSize)) );
 		font-size: var(--msUp3);
-		line-height: calc( 10 * 8 / var(--msUp3) * 18 + 0em);
+		line-height: calc( calc(10 * var(--baselineUnit)) / calc(var(--msUp3) * var(--baseFontSize)) );
 	}
 	h2, .h2 {
-		margin-bottom: calc( 8 / var(--msUp2) * 18 + 0em);
+		margin-bottom: calc( calc(1 * var(--baselineUnit)) / calc(var(--msUp2) * var(--baseFontSize)) );
 		font-size: var(--msUp2);
-		line-height: calc( 6 * 8 / var(--msUp2) * 18 + 0em);
+		line-height: calc( calc(6 * var(--baselineUnit)) / calc(var(--msUp2) * var(--baseFontSize)) );
 	}
 	p { text-align: justify; }
 }
 @media (min-width: 56.25em) {
 	h1, .h1 {
-		margin-bottom: calc( 8 / var(--msUp4) * 18 + 0em);
+		margin-bottom: calc( calc(1 * var(--baselineUnit)) / calc(var(--msUp4) * var(--baseFontSize)) );
 		font-size: var(--msUp4);
-		line-height: calc( 12 * 8 / var(--msUp4) * 18 + 0em);
+		line-height: calc( calc(12 * var(--baselineUnit)) / calc(var(--msUp4) * var(--baseFontSize)) );
 	}
 	h2, .h2 {
-		margin-bottom: calc( 8 / var(--msUp3) * 18 + 0em);
+		margin-bottom: calc( calc(1 * var(--baselineUnit)) / calc(var(--msUp3) * var(--baseFontSize)) );
 		font-size: var(--msUp3);
-		line-height: calc( 8 * 8 / var(--msUp3) * 18 + 0em);
+		line-height: calc( calc(8 * var(--baselineUnit)) / calc(var(--msUp3) * var(--baseFontSize)) );
 	}
 	h3, .h3 {
-		margin-bottom: calc( 8 / var(--msUp2) * 18 + 0em);
+		margin-bottom: calc( calc(1 * var(--baselineUnit)) / calc(var(--msUp2) * var(--baseFontSize)) );
 		font-size: var(--msUp2);
-		line-height: calc( 6 * 8 / var(--msUp2) * 18 + 0em);
+		line-height: calc( calc(6 * var(--baselineUnit)) / calc(var(--msUp2) * var(--baseFontSize)) );
 	}
 }
 
@@ -172,12 +174,12 @@ h6, .h6 {
 
 /* PARAGRAPH SETTINGS */
 p {
-	margin-bottom: calc( 4 * 8 / 1 * 18 + 0em);
+	margin-bottom: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 }
 /* paragraph-indent */
 p + p {
-	margin-top: calc( (4 * -1) * 8 / 1 * 18 + 0em);
-	text-indent: calc( 4 * 8 / 1 * 18 + 0em);
+	margin-top: calc( calc(-4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
+	text-indent: var(--baseFontEm);
 }
 
 
@@ -186,17 +188,17 @@ p + p {
 
 /* BLOCKQUOTES */
 blockquote {
-	margin-top: calc( 4 * 8 / 1 * 18 + 0em);
-	margin-bottom: calc( 4 * 8 / 1 * 18 + 0em);
+	margin-top: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
+	margin-bottom: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 	margin-left: 0;
 	padding-top: 0;
 	padding-bottom: 0;
-	padding-left: calc( 4 * 8 / 1 * 18 + 0em);
+	padding-left: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 	border-left: 8 solid var(--black);
 	font-family: var(--baseFontFamily);
 }
 blockquote p {
-	margin-bottom: calc( 2 * 8 / 1 * 18 + 0em);
+	margin-bottom: calc( calc(2 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 }
 blockquote footer cite:before { content: " – "; }
 
@@ -215,8 +217,8 @@ pre, code {
 }
 pre {
 	display: block;
-	padding: calc( 8 / 1 * 18 + 0em);
-	margin-bottom: calc( 4 * 8 / 1 * 18 + 0em);
+	padding: calc( calc(1 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
+	margin-bottom: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 	background-color: var(--black);
 	color: var(--white);
 }
@@ -234,7 +236,7 @@ time, .time { text-transform: uppercase; }
 
 /* ADDRESS */
 address {
-	margin-bottom: calc( 4 * 8 / 1 * 18 + 0em);
+	margin-bottom: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 }
 
 
@@ -243,8 +245,8 @@ address {
 
 /* LISTS */
 ol, ul, dl {
-	margin-bottom: calc( 4 * 8 / 1 * 18 + 0em);
-	margin-left: calc( 4 * 8 / 1 * 18 + 0em);
+	margin-bottom: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
+	margin-left: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 }
 ul ul,
 ol ol,
@@ -253,7 +255,7 @@ ul { list-style: disc; }
 ol { list-style: decimal; }
 dt { text-decoration: underline; }
 dt:after { content: ': '; }
-dd { margin-left: calc( 4 * 8 / 1 * 18 + 0em); }
+dd { margin-left: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) ); }
 
 
 
@@ -262,7 +264,7 @@ dd { margin-left: calc( 4 * 8 / 1 * 18 + 0em); }
 /* PROPERTY STYLES */
 small, .font-small {
 	font-size: var(--msDown1);
-	line-height: calc( 3 * 8 / var(--msDown1) * 18 + 0em);
+	line-height: calc( calc(3 * var(--baselineUnit)) / calc(var(--msDown1) * var(--baseFontSize)) );
 }
 em, b, strong { font-weight: bold; }
 i {
@@ -298,8 +300,8 @@ abbr {
 abbr[title]:hover { cursor: help; }
 /* Creates horizontal rules that obey the baseline. */
 hr {
-	margin-top: calc( 4 * 8 / 1 * 18 + 0em);
-	margin-bottom: calc( 4 * 8 / 1 * 18 + 0em);
+	margin-top: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
+	margin-bottom: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 	border: none;
 	border-top: 1px solid var(--black);
 }
