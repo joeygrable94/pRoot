@@ -1,6 +1,6 @@
 /* TABLES */
 table {
-	width: 100%;*.
+	/*width: 100%;*/
 	margin-bottom: calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
 	border-collapse: collapse;
 	border-spacing: 0;

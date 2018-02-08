@@ -1,78 +1,12 @@
-/*
-
-FONT_SIZE
---baseFontEm
-
-LINES
---baselineMltp
-
-@rhythm-em (LINES, FONT_SIZE)
-	calc( (var(LINES) * var(--baselineUnit)) / (var(FONT_SIZE) * var(--baseFontSize))  );
-
-@unitless-rhythm (LINES, FONT_SIZE)
-	calc( (var(LINES) * var(--baselineUnit)) / (var(FONT_SIZE) * var(--baseFontSize)) );
-
-@set-type (LINES, FONT_SIZE)
-	font-size: var(FONT_SIZE);
-	line-height: calc( (var(LINES) * var(--baselineUnit)) / (var(FONT_SIZE) * var(--baseFontSize)) );
-
-
-calc( baselineMltp * BaselineUnit / baseFontEm * BaseFontSize );
-calc( baselineMltp * BaselineUnit / FontSizeMltp * BaseFontSize + 0emUnits);
-calc( calc(4 * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
-
-*/
-:root {
-
-	/* TYPOGRAPHY */
-	--baseFontFamily: serif;
-	--baseFontHeaders: sans-serif;
-	--baseFontMono: monospace;
-	
-	--baseFontSize: 18;
-	--baselineUnit: 8px;
-	--baseFontEm: 1em;
-	--baselineMltp: 4;
-	--ratioModularScale: 1.5;
-
-	--msDown1: 	calc( var(--baseFontEm)	/	var(--ratioModularScale) );
-	--msDown2: 	calc( var(--msDown1)	/	var(--ratioModularScale) );
-	--msDown3: 	calc( var(--msDown2)	/	var(--ratioModularScale) );
-	--msDown4:	calc( var(--msDown3)	/	var(--ratioModularScale) );
-	--msUp1:	calc( var(--baseFontEm)	*	var(--ratioModularScale) );
-	--msUp2:	calc( var(--msUp1)		*	var(--ratioModularScale) );
-	--msUp3:	calc( var(--msUp2)		*	var(--ratioModularScale) );
-	--msUp4:	calc( var(--msUp3)		*	var(--ratioModularScale) );
-	--msUp5:	calc( var(--msUp4)		*	var(--ratioModularScale) );
-	--msUp6:	calc( var(--msUp5)		*	var(--ratioModularScale) );
-	--msUp7:	calc( var(--msUp6)		*	var(--ratioModularScale) );
-	--msUp8:	calc( var(--msUp7)		*	var(--ratioModularScale) );
-	--msUp9:	calc( var(--msUp8)		*	var(--ratioModularScale) );
-	--msUp10:	calc( var(--msUp9)		*	var(--ratioModularScale) );
-
-	/* COLORS */
-	--black: #000000;
-	--white: #ffffff;
-
-}
-
-
-
-
-
 /* BASE */
 html {
 	font-size: calc( var(--baseFontSize)/16 * 100%);
-	height: 100vh;
-	width: 100vw;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 }
 
 body {
 	line-height: calc( calc(var(--baselineMltp) * var(--baselineUnit)) / calc(var(--baseFontEm) * var(--baseFontSize)) );
-	min-height: 100%;
-	min-width: 100%;
 	margin: 0;
 	padding: 0;
 	border: 0;
