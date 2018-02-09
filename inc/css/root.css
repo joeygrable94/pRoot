@@ -2,8 +2,8 @@
 :root {
 
 	/* TYPOGRAPHY */
-	--baseFontFamily: serif;
-	--baseFontHeaders: sans-serif;
+	--baseFontFamily: 'Futura W01', helvetica, sans-serif;
+	--baseFontHeaders: 'Futura W01', helvetica, sans-serif;
 	--baseFontMono: monospace;
 	
 	--baseFontSize: 18;
@@ -99,6 +99,11 @@
 }
 
 /* BASE */
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
 html {
 	height: 100%;
 	width: 100%;
