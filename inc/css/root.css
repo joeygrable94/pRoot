@@ -16,6 +16,7 @@
 	--msDown2: 	calc( var(--msDown1)	/	var(--ratioMS) );
 	--msDown3: 	calc( var(--msDown2)	/	var(--ratioMS) );
 	--msDown4:	calc( var(--msDown3)	/	var(--ratioMS) );
+	--msDown5:	calc( var(--msDown4)	/	var(--ratioMS) );
 	--msUp1:	calc( var(--baseFontEm)	*	var(--ratioMS) );
 	--msUp2:	calc( var(--msUp1)		*	var(--ratioMS) );
 	--msUp3:	calc( var(--msUp2)		*	var(--ratioMS) );
