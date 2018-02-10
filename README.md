@@ -1,5 +1,4 @@
-
 # pRoot: project root
 A HTML5 structure to build off.
 
-[View the CSS-Grid-101 project online.](http://joeygrable.com/git/pRoot/)
+[View project root online.](http://joeygrable.com/git/pRoot/)
